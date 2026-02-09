@@ -23,9 +23,9 @@ _start:
 	// MSB of CPSR represents which are active out of N, Z, C, V
 	// Rest 7 bits are for the I
 	// MSB = 8 represents 1000 = N = negative
-	// MSB = 8 represents 0100 = Z = Zero
+	// MSB = 4 represents 0100 = Z = Zero
 	// MSB = 2 represents 0010 = C = Carry
-	// MSB = 8 represents 0001 = V = Overflow
+	// MSB = 1 represents 0001 = V = Overflow
 	SUBS R12, R10, R11 // CPSR MSB becomes 8, N is highlighted
 	SUBS R9, R11, R10 // CPSR MSB becomes 2
 	ADDS R5, R6, R8 // CPSR MSB becomes 6, since result is Zero
@@ -36,3 +36,4 @@ _start:
 
 	MOV R7, #1
 	SWI 0
+
